@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SteexGSM</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+
+        <div class="logo">
+            <span>Steex</span>GSM
+        </div>
+
+        <div class="top-buttons">
+            <button class="btn-login" onclick="openLogin()">
+                Connexion
+            </button>
+
+            <button class="btn-register" onclick="openRegister()">
+                Créer un compte
+            </button>
+        </div>
+
+    </header>
+
+
+    <aside class="sidebar">
+
+        <button class="menu-btn" onclick="toggleMenu()">
+            ☰
+        </button>
+
+        <nav id="menu">
+
+            <a href="#" onclick="showPage('accueil')">
+                🏠 Accueil
+            </a>
+
+            <a href="#" onclick="showPage('imei')">
+                📱 IMEI Service
+            </a>
+
+            <a href="#" onclick="showPage('server')">
+                🖥️ Server Service
+            </a>
+
+            <a href="#" onclick="showPage('remote')">
+                🌐 Remote Service
+            </a>
+
+            <a href="#" onclick="showPage('commandes')">
+                📋 Mes commandes
+            </a>
+
+            <a href="#" onclick="showPage('solde')">
+                💰 Mon solde
+            </a>
+
+            <a href="#" onclick="showPage('support')">
+                💬 Support
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <main class="content">
+
+        <section id="accueil" class="page active">
+
+            <div class="hero">
+
+                <h1>Bienvenue sur SteexGSM</h1>
+
+                <p>
+                    Votre plateforme pour les services GSM,
+                    IMEI, Server et Remote.
+                </p>
+
+                <button class="main-btn" onclick="openRegister()">
+                    Commencer maintenant
+                </button>
+
+            </div>
+
+
+            <div class="services">
+
+                <div class="service-card">
+                    <div class="icon">📱</div>
+                    <h2>IMEI Service</h2>
+                    <p>
+                        Accédez à vos services IMEI
+                        directement depuis votre compte.
+                    </p>
+                    <button onclick="showPage('imei')">
+                        Voir les services
+                    </button>
+                </div>
+
+
+                <div class="service-card">
+                    <div class="icon">🖥️</div>
+                    <h2>Server Service</h2>
+                    <p>
+                        Utilisez différents services
+                        serveur GSM.
+                    </p>
+                    <button onclick="showPage('server')">
+                        Voir les services
+                    </button>
+                </div>
+
+
+                <div class="service-card">
+                    <div class="icon">🌐</div>
+                    <h2>Remote Service</h2>
+                    <p>
+                        Commandez vos services
+                        à distance.
+                    </p>
+                    <button onclick="showPage('remote')">
+                        Voir les services
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="imei" class="page">
+
+            <h1>IMEI Service</h1>
+
+            <div class="service-list">
+
+                <div class="service-item">
+                    <h3>IMEI Check</h3>
+                    <p>Vérification des informations IMEI.</p>
+                    <button>Commander</button>
+                </div>
+
+                <div class="service-item">
+                    <h3>IMEI Service</h3>
+                    <p>Services disponibles selon le modèle.</p>
+                    <button>Commander</button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="server" class="page">
+
+            <h1>Server Service</h1>
+
+            <div class="service-list">
+
+                <div class="service-item">
+                    <h3>GSM Server</h3>
+                    <p>Services GSM disponibles sur serveur.</p>
+                    <button>Commander</button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="remote" class="page">
+
+            <h1>Remote Service</h1>
+
+            <div class="service-list">
+
+                <div class="service-item">
+                    <h3>Remote Unlock</h3>
+                    <p>Service à distance.</p>
+                    <button>Commander</button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="commandes" class="page">
+
+            <h1>Mes commandes</h1>
+
+            <div class="empty-box">
+                <p>Vous n'avez aucune commande.</p>
+            </div>
+
+        </section>
+
+
+        <section id="solde" class="page">
+
+            <h1>Mon solde</h1>
+
+            <div class="balance">
+                <span>Solde disponible</span>
+                <strong>0.00 $</strong>
+            </div>
+
+        </section>
+
+
+        <section id="support" class="page">
+
+            <h1>Support</h1>
+
+            <div class="support-box">
+
+                <p>
+                    Besoin d'aide ? Contactez notre support.
+                </p>
+
+                <button>
+                    Contacter le support
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <div id="loginModal" class="modal">
+
+        <div class="modal-box">
+
+            <span class="close" onclick="closeModal('loginModal')">
+                ×
+            </span>
+
+            <h2>Connexion</h2>
+
+            <input type="email" placeholder="Adresse email">
+
+            <input type="password" placeholder="Mot de passe">
+
+            <button class="modal-btn">
+                Se connecter
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div id="registerModal" class="modal">
+
+        <div class="modal-box">
+
+            <span class="close" onclick="closeModal('registerModal')">
+                ×
+            </span>
+
+            <h2>Créer un compte</h2>
+
+           <input
+    type="text"
+    id="registerName"
+    placeholder="Nom complet"
+>
+
+<input
+    type="email"
+    id="registerEmail"
+    placeholder="Adresse email"
+>
+
+<input
+    type="password"
+    id="registerPassword"
+    placeholder="Mot de passe"
+>
+
+<input
+    type="password"
+    id="registerConfirmPassword"
+    placeholder="Confirmer le mot de passe"
+>
+
+<button class="modal-btn" onclick="registerUser()">
+    Créer mon compte
+</button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
